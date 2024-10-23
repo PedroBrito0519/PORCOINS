@@ -1,0 +1,101 @@
+.chat-container {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 400px;
+    height: 500px;
+    background-color: #d1e7dd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1000;
+    transition: 0s;
+    cursor: grab;
+}
+ 
+
+ 
+.chat-box {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+ 
+.messages {
+    display: flex;
+    flex-direction: column;
+}
+ 
+.user-message, .bot-message {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+ 
+.user-message {
+    align-self: flex-end;
+    background-color: #d1e7dd;
+}
+ 
+.bot-message {
+    align-self: flex-start;
+    background-color: #f8d7da;
+}
+ 
+#user-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 0;
+}
+ 
+#send-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #3700ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+ 
+#send-btn:hover {
+    background-color: #3700ff;
+}
+ 
+/* Bolinha flutuante do chat */
+.chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #3700ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+ 
+/* Estilos para as opções clicáveis */
+.option-button {
+    background-color: #d1e7dd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+    max-width: 80%;
+    word-wrap: break-word;
+    align-self: flex-start;
+}
+.option-button:hover {
+    background-color: #c3d6cb;
+}
