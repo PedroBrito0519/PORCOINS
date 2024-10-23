@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/contato.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>PORCOINS - Avaliação</title>
+    <link rel="icon" href="imagens/favicon.png">
+  </head>
+
+  <body>
+    <div class="glow-effect"></div>
+    <div class="container-avaliacoes">
+    <div class="rating">
+      <input type="radio" name="star" id="star1" onclick="updateFeedback('Amei!😍')">
+      <label for="star1"></label>
+      <input type="radio" name="star" id="star2" onclick="updateFeedback('Gostei Muito!🙂')">
+      <label for="star2"></label>
+      <input type="radio" name="star" id="star3" onclick="updateFeedback('Ta Ok!😐')">
+      <label for="star3"></label>
+      <input type="radio" name="star" id="star4" onclick="updateFeedback('Não gostei muito!🙄')">
+      <label for="star4"></label>
+      <input type="radio" name="star" id="star5" onclick="updateFeedback('Odiei!!😠')">
+      <label for="star5"></label>
+    </div>
+  
+    <div id="feedback-text" style="margin-top: 10px;"></div>
+  
+    <textarea placeholder="Deixe seu comentário aqui..." rows="4" cols="50" style="margin-top: 10px;"></textarea>
+    <button class="btn-ava"><a href="agradecimento.html">ENVIAR</a></button>
+  </div>
+  
+      
+  
+  <script>
+   function updateFeedback(feedback) {
+  document.getElementById('feedback-text').innerText = feedback;
+}
+
+const glowEffect = document.createElement('div');
+glowEffect.className = 'glow-effect';
+document.body.appendChild(glowEffect);
+
+document.addEventListener('mousemove', (event) => {
+    glowEffect.style.left = `${event.pageX - 50}px`; // Centraliza o brilho
+    glowEffect.style.top = `${event.pageY - 50}px`; // Centraliza o brilho
+    glowEffect.style.opacity = '50'; // Torna o brilho visível
+
+    // Após 0.2 segundos, remove a opacidade
+    setTimeout(() => {
+        glowEffect.style.opacity = '0'; 
+    }, 200);
+});
+
+
+
+document.addEventListener('mousemove', (e) => {
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    pixel.style.left = `${e.clientX}px`;
+    pixel.style.top = `${e.clientY}px`;
+    document.body.appendChild(pixel);
+
+    // Remove o pixel após a animação
+    setTimeout(() => {
+        pixel.remove();
+    }, 500); // Tempo para a bolinha sumir
+});
+
+  </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORCOINS - Filtro Curso</title>
+    
+    <link rel="stylesheet" href="CSS/Filtro.css">
+    <script src="js/error.js"></script>
+    <link class="titulo-logo" rel="icon" href="imagens/Favicon.png">
+</head>
+
+<body >
+    <div class="glow-effect"></div>
+    <div class="container">
+        <span class="text1">Vamos aprender?!</span>
+        <span class="text2">Escolha um tipo de ensino!</span>
+      </div>
+
+      <script>
+        // Torna o texto 2 visível mais rapidamente
+        setTimeout(function() {
+            document.querySelector('.text2').style.opacity = 1; // Torna o texto 2 visível
+        }, 1000); // Texto 2 aparece após 1 segundo
+    
+        // Mensagem visível por 3 segundos
+        setTimeout(function() {
+            window.location.href = 'filtro.html'; // Redireciona para a página do filtro
+        }, 7000); // Redireciona após 4 segundos (1s para aparecer + 3s para visualizar)
+    </script>
+    
+</body>
+</html>
