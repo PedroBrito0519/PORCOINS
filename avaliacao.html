@@ -1,73 +1,57 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação e Lista de Compras</title>
     <link rel="stylesheet" href="CSS/contato.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <title>PORCOINS - Avaliação</title>
-    <link rel="icon" href="imagens/favicon.png">
-  </head>
-
-  <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/avaliacao.js" defer></script>
+</head>
+<body>
     <div class="glow-effect"></div>
     <div class="container-avaliacoes">
-    <div class="rating">
-      <input type="radio" name="star" id="star1" onclick="updateFeedback('Amei!😍')">
-      <label for="star1"></label>
-      <input type="radio" name="star" id="star2" onclick="updateFeedback('Gostei Muito!🙂')">
-      <label for="star2"></label>
-      <input type="radio" name="star" id="star3" onclick="updateFeedback('Ta Ok!😐')">
-      <label for="star3"></label>
-      <input type="radio" name="star" id="star4" onclick="updateFeedback('Não gostei muito!🙄')">
-      <label for="star4"></label>
-      <input type="radio" name="star" id="star5" onclick="updateFeedback('Odiei!!😠')">
-      <label for="star5"></label>
+        <h2>Avalie nosso serviço</h2>
+        <div class="rating">
+            <input class="input" type="radio" name="star" id="star1" onclick="updateFeedback('Amei!😍')">
+            <label class="label" for="star1"></label>
+            <input class="input" type="radio" name="star" id="star2" onclick="updateFeedback('Gostei Muito!🙂')">
+            <label class="label" for="star2"></label>
+            <input class="input" type="radio" name="star" id="star3" onclick="updateFeedback('Tá Ok!😐')">
+            <label class="label" for="star3"></label>
+            <input class="input" type="radio" name="star" id="star4" onclick="updateFeedback('Não gostei muito!🙄')">
+            <label class="label" for="star4"></label>
+            <input class="input" type="radio" name="star" id="star5" onclick="updateFeedback('Odiei!!😠')">
+            <label class="label" for="star5"></label>
+        </div>
+
+        <h1 id="feedback-message"></h1>
+
+
+        <form id="form-feedback">
+            <textarea class="form_textarea" id="feedback-input" placeholder="Digite sua mensagem aqui..." required></textarea>
+            <button class="form_button" type="submit">Confirmar</button>
+        </form>
+
+        <h2>Mensagens</h2>
+        <ul id="feedback-list"></ul>
     </div>
-  
-    <div id="feedback-text" style="margin-top: 10px;"></div>
-  
-    <textarea placeholder="Deixe seu comentário aqui..." rows="4" cols="50" style="margin-top: 10px;"></textarea>
-    <button class="btn-ava"><a href="agradecimento.html">ENVIAR</a></button>
-  </div>
-  
-      
-  
-  <script>
-   function updateFeedback(feedback) {
-  document.getElementById('feedback-text').innerText = feedback;
-}
 
-const glowEffect = document.createElement('div');
-glowEffect.className = 'glow-effect';
-document.body.appendChild(glowEffect);
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Editar Mensagem</h2>
+            <textarea id="edit-feedback-input"></textarea>
+            <button id="save-button">Salvar</button>
+            <button id="delete-button">Excluir</button>
+        </div>
+    </div>
 
-document.addEventListener('mousemove', (event) => {
-    glowEffect.style.left = `${event.pageX - 50}px`; // Centraliza o brilho
-    glowEffect.style.top = `${event.pageY - 50}px`; // Centraliza o brilho
-    glowEffect.style.opacity = '50'; // Torna o brilho visível
-
-    // Após 0.2 segundos, remove a opacidade
-    setTimeout(() => {
-        glowEffect.style.opacity = '0'; 
-    }, 200);
-});
-
-
-
-document.addEventListener('mousemove', (e) => {
-    const pixel = document.createElement('div');
-    pixel.className = 'pixel';
-    pixel.style.left = `${e.clientX}px`;
-    pixel.style.top = `${e.clientY}px`;
-    document.body.appendChild(pixel);
-
-    // Remove o pixel após a animação
-    setTimeout(() => {
-        pixel.remove();
-    }, 500); // Tempo para a bolinha sumir
-});
-
-  </script>
-  </body>
+    <div class="btn-container">
+        <a class="btn_ava" href="agradecimento.html">
+            <button>ENVIAR</button>
+        </a>
+    </div>
+</body>
 </html>
