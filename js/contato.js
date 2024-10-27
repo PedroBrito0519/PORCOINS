@@ -34,22 +34,6 @@ document.addEventListener('mousemove', (event) => {
     }, 200);
 });
 
-
-
-document.addEventListener('mousemove', (e) => {
-    const pixel = document.createElement('div');
-    pixel.className = 'pixel';
-    pixel.style.left = `${e.clientX}px`;
-    pixel.style.top = `${e.clientY}px`;
-    document.body.appendChild(pixel);
-
-    // Remove o pixel após a animação
-    setTimeout(() => {
-        pixel.remove();
-    }, 500); // Tempo para a bolinha sumir
-});
-
-
 //ERRP DE WIFI
 window.addEventListener('offline', function() {
     window.location.href = 'error.html'; // Redireciona quando estiver offline
