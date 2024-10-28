@@ -56,7 +56,7 @@ function renderFeedback() {
         li.innerHTML = `
             <span>${feedback}</span>
             <div>
-                <button class="form_button" onclick="openEditModal(${index})">Editar</button>
+                <button class="form_button" onclick="openEditModal(${index})"><a href="index.html">Editar</a></button>
             </div>
         `;
         feedbackList.appendChild(li);
